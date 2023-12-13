@@ -39,7 +39,7 @@
             @csrf
             <input type="hidden" name="post_id" value="{{ $post->id }}">
             <div class="justify-between flex block ">
-                <textarea name="content" class=" resize-none w-full p-2 border rounded-md" oninput="autoResize(this)" placeholder="댓글을 작성하세요..." required></textarea>
+                <textarea name="content" class=" resize-none w-full p-2 border rounded-md" oninput="autoResize(this)" style="overflow:hidden" placeholder="댓글을 작성하세요..." required></textarea>
                 <button type="submit" class="ml-2 bg-blue-500 text-white px-2 rounded hover:bg-blue-700 w-32"> 작성</button>
             </div>
         <x-input-error :messages="$errors->get('content')" class="mt-2" />

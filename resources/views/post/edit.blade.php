@@ -1,4 +1,11 @@
 <!-- resources/views/posts/edit.blade.php -->
+<script>
+    function autoResize(textarea) {
+        textarea.style.height = 'auto';
+        textarea.style.height = (textarea.scrollHeight) + 'px';
+    }
+</script>
+
 
 <x-app-layout>
     <x-slot name="header">
@@ -23,7 +30,7 @@
 
                             <div class="mb-4">
                                 <label for="content" class="block text-gray-700 dark:text-gray-300 font-semibold mb-2">Content</label>
-                                <textarea name="content" id="content" rows="12" class="resize-none mt-1 p-2 border rounded-md w-full h-auto" required>{{ old('content', $post->content) }}</textarea>
+                                <textarea name="content" id="content" rows="12" class="resize-none mt-1 p-2 border rounded-md w-full h-auto" oninput="autoResize(this)" style="overflow:hidden" required>{{ old('content', $post->content) }}</textarea>
                             </div>
 
                             <div class="mb-4">
